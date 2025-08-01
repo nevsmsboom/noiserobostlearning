@@ -21,11 +21,14 @@ If you use this implementation, please cite our [paper](https://arxiv.org/abs/23
 ## How to use
 
 #### Train the linear regression-based noise rate estimation module
-Do the first-phase training in ours.py and save relative npz files to folder linearregression/alldata, with filenames like experimentnameyoulike_datasetname_noiserate.npz.
-Run lrtrain.py to generate linear regressors, and they will be saved with the relavant dataset name in linearregression folder.
+First, run ours.py to perform the initial training phase. Save the resulting .npz files to the linearregression/alldata/ directory, with filenames like experimentnameyoulike_datasetname_noiserate.npz.
+Next, execute lrtrain.py to train the linear regressors. The trained models will be saved in the linearregression/ folder, named according to their corresponding dataset.
+
+#### Create NoisyCXR dataset 
+Run makebinarynoisycxr.py in makeNoisyCXRdataset folder. This script will generate a dictionary that maps image files to their corresponding clean and noisy labels.
 
 #### Run the main script 
-MedMNIST dataset can be placed at ../../medmnistdata, or can be modified through the dataloader.
+Ensure the MedMNIST dataset is located at ../../medmnistdata. If you have placed it in a different directory, you will need to update the path in the dataloader.
 
 ## Team
 
